@@ -1,0 +1,5 @@
+*.lnk
+test 
+spec
+coverage
+.nyc_output
