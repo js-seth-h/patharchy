@@ -156,3 +156,24 @@ describe 'fromPairs', ()->
         w: 3
       '2':
         'test'
+
+describe 'map', ()->
+  it 'given Object, then map All values', ()->
+    obj =
+      n1:
+        n11: 'test'
+      n2:
+        n21: '21'
+        n22: '22'
+      n3: 'root'
+    mapped = patharachy.map obj, (value)->
+      return "$"+value + "@"
+
+    # console.log mapped
+    expect(mapped).eql
+      n1:
+        n11: '$test@'
+      n2:
+        n21: '$21@'
+        n22: '$22@'
+      n3: '$root@'

@@ -22,6 +22,12 @@ PATHARACHY =
     return _.reduce pairs, (result, pair)->
       _.set result, pair...
     , {}
+  map: (obj, fn)->
+    pairs =  PATHARACHY.toPairs obj
+    return _.reduce pairs, (result, pair)->
+      [patharchy, value] = pair
+      _.set result, patharchy, fn value, patharchy, pairs
+    , {}
 
 
 module.exports = exports =  PATHARACHY

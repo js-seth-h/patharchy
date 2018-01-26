@@ -1,8 +1,8 @@
 {
   "name": "patharchy",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "patharchy",
-  "main": "index.js",
+  "main": "lib/index",
   "scripts": {
     "build": "coffee -c -b -o lib-js lib  ",
     "prepublish": "npm run-script build",
