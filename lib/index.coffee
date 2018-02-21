@@ -15,9 +15,16 @@ compileToPairs = (opt)->
         _toPairs value, prefix + index
     return [[prefix, obj]]
 
+allToPairs = compileToPairs {}
+objectToPairs = compileToPairs array: false
+arrayToPairs = compileToPairs object: false
+
+allToPairs.objectOnly = objectToPairs
+allToPairs.arrayOnly = arrayToPairs
+
 PATHARACHY =
   compileToPairs: compileToPairs
-  toPairs: compileToPairs {}
+  toPairs: allToPairs
   fromPairs: (pairs)->
     return _.reduce pairs, (result, pair)->
       _.set result, pair...
